@@ -1,14 +1,8 @@
-// map.js - version para GitHub Pages (sin Vite / node_modules)
-// Requiere que webgis.html cargue antes ol.js y ol-layerswitcher.js desde CDN
-// (ver instrucciones: los <script> van justo antes de este archivo)
 
 // 1. Setup Map Base Configurations
 const initialZoom = 6;
 const initialCoordinates = [2.2137, 46.2276];
 
-// OJO: localhost = el GeoServer de VUESTRO ordenador.
-// Las capas solo se veran en un PC donde GeoServer este arrancado.
-// Si algun dia publicais GeoServer en un servidor, cambiad solo esta linea.
 const geoserverWmsUrl = 'http://localhost:8080/geoserver/Lab_group_03/wms';
 
 let osm = new ol.layer.Tile({
