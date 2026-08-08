@@ -1,25 +1,7 @@
 /**
  * WebGIS configuration — Mapping Air Quality, France, Group 3
  * ------------------------------------------------------------------
- * Edit this file to point the map at your real data. Nothing else in
- * webgis.js needs to change for a normal swap of layers or basemaps.
- * ------------------------------------------------------------------
- */
 
-// ============================================================
-// >>> GROUP 3 TODO — GEOSERVER CONNECTION (fill in when ready) <<<
-// The group decided to connect the WebGIS to the Polimi online
-// GeoServer (https://www.gis-geoserver.polimi.it/) later. Until then
-// USE_GEOSERVER stays false and the map uses the static placeholder
-// layers below (served straight from this GitHub Pages site).
-//
-// To switch over:
-//   1. Set USE_GEOSERVER to true.
-//   2. Fill in GEOSERVER_URL and GEOSERVER_WORKSPACE below.
-//   3. For each layer in STATIC_LAYERS, add a matching entry to
-//      GEOSERVER_LAYER_NAMES (the "workspace:layer_name" published
-//      on GeoServer for that dataset).
-// webgis.js reads these values automatically — see buildLayer().
 // ============================================================
 const USE_GEOSERVER = false;
 const GEOSERVER_URL = "";           // e.g. "https://www.gis-geoserver.polimi.it/geoserver/wms"
