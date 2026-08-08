@@ -1,15 +1,27 @@
 
-// 1. Setup Map Base Configurations
 const initialZoom = 6;
 const initialCoordinates = [2.2137, 46.2276];
 
+
 const geoserverWmsUrl = 'http://localhost:8080/geoserver/Lab_group_03/wms';
+
 
 let osm = new ol.layer.Tile({
     title: 'OpenStreetMap',
     type: 'base',
     visible: true,
     source: new ol.source.OSM()
+});
+
+
+let esriSatellite = new ol.layer.Tile({
+    title: 'Esri Satelite',
+    type: 'base',
+    visible: false,
+    source: new ol.source.XYZ({
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        attributions: 'Tiles © Esri'
+    })
 });
 
 let map = new ol.Map({
@@ -23,7 +35,6 @@ let map = new ol.Map({
 });
 
 // 2. Define the individual WMS Layers
-// Root Level Layers inside Overlay Group
 var franceBoundaries = new ol.layer.Image({
     title: 'France boundaries',
     visible: true,
@@ -95,8 +106,7 @@ var no2_amac = new ol.layer.Image({
     visible: false,
     source: new ol.source.ImageWMS({
         url: geoserverWmsUrl,
-        // REVISAR: hay un espacio raro en el nombre de la capa ("no2 _2021").
-        // Comprobad en GeoServer si la capa se llama exactamente asi.
+      
         params: { 'LAYERS': 'Lab_group_03:France_no2 _2021_2023_AMAC_map' }
     })
 });
@@ -184,7 +194,7 @@ var pm2p5_average = new ol.layer.Image({
 // 3. Assemble Nested Layer Groups matching the hierarchy in the interface layout
 let basemapLayers = new ol.layer.Group({
     title: 'Base Maps',
-    layers: [osm]
+    layers: [osm, esriSatellite]
 });
 
 let overlayLayers = new ol.layer.Group({
