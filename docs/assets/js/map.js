@@ -307,14 +307,14 @@ ctrlStyle.textContent = `
 
     width: auto !important;
     height: auto !important;
-    max-width: 400px !important;
+    max-width: 350px !important;
 
     background: rgba(255,255,255,0.88) !important;
     padding: 2px 5px !important;
     margin: 0 !important;
     border-radius: 4px !important;
 
-    font-size: 20px !important;
+    font-size: 15px !important;
     line-height: 1.2 !important;
 
     z-index: 1000 !important;
@@ -328,7 +328,7 @@ ctrlStyle.textContent = `
 
   .ol-attribution li,
   .ol-attribution a {
-    font-size: 20px !important;
+    font-size: 15px !important;
     line-height: 1.2 !important;
   }
 
