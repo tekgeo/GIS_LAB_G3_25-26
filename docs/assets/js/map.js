@@ -319,5 +319,4 @@ collectWmsLayers(overlayLayers, []).forEach(function (lyr) {
     lyr.on('change:visible', updateLegend);
 });
 
-// Dibuja la leyenda al cargar
 updateLegend();
