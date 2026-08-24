@@ -295,7 +295,7 @@ function updateLegend() {
     });
 
     if (visibles.length === 0) {
-        content.innerHTML = '<div class="legend-empty">Enciende una capa para ver su leyenda.</div>';
+        content.innerHTML = '<div class="legend-empty">Enable a layer to view its legend.</div>';
         return;
     }
 
