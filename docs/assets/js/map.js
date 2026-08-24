@@ -287,7 +287,7 @@ document.head.appendChild(ctrlStyle);
 //Legend
 var legendPanel = document.createElement('div');
 legendPanel.id = 'legend-panel';
-legendPanel.innerHTML = '<div class="legend-title">LEYENDA</div><div id="legend-content"></div>';
+legendPanel.innerHTML = '<div class="legend-title">LEGEND</div><div id="legend-content"></div>';
 document.getElementById('map').appendChild(legendPanel);
 
 
@@ -347,7 +347,7 @@ function updateLegend() {
     });
 
     if (visibles.length === 0) {
-        content.innerHTML = '<div class="legend-empty">Enciende una capa para ver su leyenda.</div>';
+        content.innerHTML = '<div class="legend-empty">Enable a layer to see its legend.</div>';
         return;
     }
 
@@ -362,7 +362,7 @@ function updateLegend() {
         var item = document.createElement('div');
         item.className = 'legend-item';
         item.innerHTML = '<div class="legend-item-title">' + lyr.get('title') + '</div>' +
-                         '<img src="' + url + '" alt="Leyenda de ' + lyr.get('title') + '">';
+                         '<img src="' + url + '" alt="Legend of ' + lyr.get('title') + '">';
         content.appendChild(item);
     });
 }
