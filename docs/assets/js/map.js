@@ -1,5 +1,5 @@
 
-// 1. Setup Map Base Configurations
+// 1. Setup Base Map Configurations
 const initialZoom = 6;
 const initialCoordinates = [2.2137, 46.2276];
 
