@@ -237,7 +237,7 @@ map.addControl(layerSwitcher);
 //6. Legend
 var legendPanel = document.createElement('div');
 legendPanel.id = 'legend-panel';
-legendPanel.innerHTML = '<div class="legend-title">LEYENDA</div><div id="legend-content"></div>';
+legendPanel.innerHTML = '<div class="legend-title">LEGEND</div><div id="legend-content"></div>';
 document.getElementById('map').appendChild(legendPanel);
 
 var legendStyle = document.createElement('style');
