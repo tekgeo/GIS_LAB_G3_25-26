@@ -234,7 +234,6 @@ map.addLayer(overlayLayers);
 var layerSwitcher = new LayerSwitcher({});
 map.addControl(layerSwitcher);
 
-
 // Scale bar
 map.addControl(new ol.control.ScaleLine({
     units: 'metric'
@@ -269,15 +268,27 @@ map.addControl(new ol.control.OverviewMap({
 // Control styling 
 var ctrlStyle = document.createElement('style');
 ctrlStyle.textContent = `
+  /* Scale bar: centred at the bottom of the viewport */
   .ol-scale-line {
-    left: 8px;
-    bottom: 8px;
+    left: 50% !important;
+    right: auto !important;
+    bottom: 8px !important;
+    transform: translateX(-50%);
     background: rgba(255,255,255,0.75);
   }
+  /* Overview map: bottom-left, above the coordinates readout */
+  .ol-overviewmap {
+    left: 8px !important;
+    right: auto !important;
+    bottom: 34px !important;
+    top: auto !important;
+  }
+  /* Cursor coordinates: bottom-left, below the overview map */
   .custom-mouse-position {
     position: absolute;
-    bottom: 26px;          
-    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    right: auto;
     top: auto;
     background: rgba(255,255,255,0.85);
     padding: 3px 8px;
@@ -289,7 +300,7 @@ ctrlStyle.textContent = `
 `;
 document.head.appendChild(ctrlStyle);
 
-// Legend
+// 6. LEGEND
 
 // Create the legend container inside the map
 var legendPanel = document.createElement('div');
@@ -297,19 +308,19 @@ legendPanel.id = 'legend-panel';
 legendPanel.innerHTML = '<div class="legend-title">LEGEND</div><div id="legend-content"></div>';
 document.getElementById('map').appendChild(legendPanel);
 
-
 var legendStyle = document.createElement('style');
 legendStyle.textContent = `
   #legend-panel {
     position: absolute;
-    bottom: 42px;        
+    top: 118px;            /* sits under the zoom / home buttons */
     left: 8px;
+    bottom: auto;
     z-index: 1000;
     background: rgba(255,255,255,0.92);
     border: 1px solid #d0d0d0;
     border-radius: 6px;
     padding: 10px 12px;
-    max-height: 45%;
+    max-height: 40%;
     max-width: 260px;
     overflow-y: auto;
     font-family: system-ui, sans-serif;
@@ -334,7 +345,7 @@ legendStyle.textContent = `
 `;
 document.head.appendChild(legendStyle);
 
-
+// Walk groups and subgroups to collect every WMS layer
 function collectWmsLayers(layerGroup, found) {
     layerGroup.getLayers().forEach(function (lyr) {
         if (lyr instanceof ol.layer.Group) {
@@ -346,7 +357,7 @@ function collectWmsLayers(layerGroup, found) {
     return found;
 }
 
-
+// Redraw the legend from the currently visible layers
 function updateLegend() {
     var content = document.getElementById('legend-content');
     content.innerHTML = '';
@@ -374,8 +385,6 @@ function updateLegend() {
         content.appendChild(item);
     });
 }
-
-
 collectWmsLayers(overlayLayers, []).forEach(function (lyr) {
     lyr.on('change:visible', updateLegend);
 });
