@@ -1,10 +1,9 @@
 
-// 1. Setup Base Map Configurations
+// 1. Setup Map Base Configurations
 const initialZoom = 6;
 const initialCoordinates = [2.2137, 46.2276];
 
 const geoserverWmsUrl = 'http://localhost:8080/geoserver/Lab_group_03/wms';
-
 
 let osm = new ol.layer.Tile({
     title: 'OpenStreetMap',
@@ -13,14 +12,14 @@ let osm = new ol.layer.Tile({
     source: new ol.source.OSM()
 });
 
-//Esri World Imagery (satelite)
+// Map2: Esri World Imagery (satelite)
 let esriSatellite = new ol.layer.Tile({
     title: 'Esri Satelite',
     type: 'base',
     visible: false,
     source: new ol.source.XYZ({
         url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        attributions: 'Tiles © Esri'
+        attributions: 'Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
     })
 });
 
@@ -107,6 +106,7 @@ var no2_amac = new ol.layer.Image({
     visible: false,
     source: new ol.source.ImageWMS({
         url: geoserverWmsUrl,
+        
         params: { 'LAYERS': 'Lab_group_03:France_no2 _2021_2023_AMAC_map' }
     })
 });
@@ -234,11 +234,62 @@ var layerSwitcher = new LayerSwitcher({});
 map.addControl(layerSwitcher);
 
 
-//6. Legend
+
+
+map.addControl(new ol.control.ScaleLine({
+    units: 'metric'
+}));
+
+
+map.addControl(new ol.control.FullScreen());
+
+map.addControl(new ol.control.MousePosition({
+    projection: 'EPSG:4326',
+    coordinateFormat: function (coord) {
+        return ol.coordinate.format(coord, 'Lon: {x}°  Lat: {y}°', 4);
+    },
+    className: 'ol-mouse-position custom-mouse-position'
+}));
+
+
+map.addControl(new ol.control.ZoomToExtent({
+    extent: ol.proj.transformExtent([-5.5, 41.0, 9.8, 51.5], 'EPSG:4326', 'EPSG:3857'),
+    label: '⌂',
+    tipLabel: 'Volver a la vista de Francia'
+}));
+
+
+map.addControl(new ol.control.OverviewMap({
+    layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
+    collapsed: true,
+    tipLabel: 'Mapa de contexto'
+}));
+
+
+var ctrlStyle = document.createElement('style');
+ctrlStyle.textContent = `
+  .custom-mouse-position {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    top: auto;
+    background: rgba(255,255,255,0.85);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: system-ui, sans-serif;
+    font-size: 12px;
+    color: #0b2d48;
+  }
+`;
+document.head.appendChild(ctrlStyle);
+
+
+//Legend
 var legendPanel = document.createElement('div');
 legendPanel.id = 'legend-panel';
-legendPanel.innerHTML = '<div class="legend-title">LEGEND</div><div id="legend-content"></div>';
+legendPanel.innerHTML = '<div class="legend-title">LEYENDA</div><div id="legend-content"></div>';
 document.getElementById('map').appendChild(legendPanel);
+
 
 var legendStyle = document.createElement('style');
 legendStyle.textContent = `
@@ -276,6 +327,7 @@ legendStyle.textContent = `
 `;
 document.head.appendChild(legendStyle);
 
+
 function collectWmsLayers(layerGroup, found) {
     layerGroup.getLayers().forEach(function (lyr) {
         if (lyr instanceof ol.layer.Group) {
@@ -295,7 +347,7 @@ function updateLegend() {
     });
 
     if (visibles.length === 0) {
-        content.innerHTML = '<div class="legend-empty">Enable a layer to view its legend.</div>';
+        content.innerHTML = '<div class="legend-empty">Enciende una capa para ver su leyenda.</div>';
         return;
     }
 
