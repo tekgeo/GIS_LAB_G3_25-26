@@ -54,13 +54,14 @@
 function multiBarChart(canvasId, labels, meanData, minData, maxData) {
     const el = document.getElementById(canvasId);
     if (!el || typeof Chart === "undefined") return;
+
     new Chart(el, {
       type: "bar",
       data: {
         labels: labels,
         datasets: [
           {
-            label: "Mean Change",
+            label: "Bar chart",
             data: meanData,
             backgroundColor: "#2c3e50", // Dark Slate Blue
             borderRadius: 4,
