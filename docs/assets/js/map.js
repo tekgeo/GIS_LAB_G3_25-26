@@ -3,7 +3,9 @@
 const initialZoom = 6;
 const initialCoordinates = [2.2137, 46.2276];
 
+
 const geoserverWmsUrl = 'http://localhost:8080/geoserver/Lab_group_03/wms';
+
 
 let osm = new ol.layer.Tile({
     title: 'OpenStreetMap',
@@ -12,9 +14,9 @@ let osm = new ol.layer.Tile({
     source: new ol.source.OSM()
 });
 
-// Map2: Esri World Imagery (satelite)
+// Base map 2: Esri World Imagery (satellite)
 let esriSatellite = new ol.layer.Tile({
-    title: 'Esri Satelite',
+    title: 'Esri Satellite',
     type: 'base',
     visible: false,
     source: new ol.source.XYZ({
@@ -106,7 +108,6 @@ var no2_amac = new ol.layer.Image({
     visible: false,
     source: new ol.source.ImageWMS({
         url: geoserverWmsUrl,
-        
         params: { 'LAYERS': 'Lab_group_03:France_no2 _2021_2023_AMAC_map' }
     })
 });
@@ -234,15 +235,15 @@ var layerSwitcher = new LayerSwitcher({});
 map.addControl(layerSwitcher);
 
 
-
-
+// Scale bar
 map.addControl(new ol.control.ScaleLine({
     units: 'metric'
 }));
 
-
+// Full screen toggle
 map.addControl(new ol.control.FullScreen());
 
+// Cursor coordinates (lon/lat in degrees, 4 decimals)
 map.addControl(new ol.control.MousePosition({
     projection: 'EPSG:4326',
     coordinateFormat: function (coord) {
@@ -251,26 +252,31 @@ map.addControl(new ol.control.MousePosition({
     className: 'ol-mouse-position custom-mouse-position'
 }));
 
-
+// Reset to the initial France view
 map.addControl(new ol.control.ZoomToExtent({
     extent: ol.proj.transformExtent([-5.5, 41.0, 9.8, 51.5], 'EPSG:4326', 'EPSG:3857'),
     label: '⌂',
-    tipLabel: 'Volver a la vista de Francia'
+    tipLabel: 'Zoom to France'
 }));
 
-
+// Context overview map
 map.addControl(new ol.control.OverviewMap({
     layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
     collapsed: true,
-    tipLabel: 'Mapa de contexto'
+    tipLabel: 'Overview map'
 }));
 
-
+// Control styling 
 var ctrlStyle = document.createElement('style');
 ctrlStyle.textContent = `
+  .ol-scale-line {
+    left: 8px;
+    bottom: 8px;
+    background: rgba(255,255,255,0.75);
+  }
   .custom-mouse-position {
     position: absolute;
-    bottom: 8px;
+    bottom: 26px;          
     right: 8px;
     top: auto;
     background: rgba(255,255,255,0.85);
@@ -283,8 +289,9 @@ ctrlStyle.textContent = `
 `;
 document.head.appendChild(ctrlStyle);
 
+// Legend
 
-//Legend
+// Create the legend container inside the map
 var legendPanel = document.createElement('div');
 legendPanel.id = 'legend-panel';
 legendPanel.innerHTML = '<div class="legend-title">LEGEND</div><div id="legend-content"></div>';
@@ -295,8 +302,8 @@ var legendStyle = document.createElement('style');
 legendStyle.textContent = `
   #legend-panel {
     position: absolute;
-    bottom: 12px;
-    left: 12px;
+    bottom: 42px;        
+    left: 8px;
     z-index: 1000;
     background: rgba(255,255,255,0.92);
     border: 1px solid #d0d0d0;
@@ -339,6 +346,7 @@ function collectWmsLayers(layerGroup, found) {
     return found;
 }
 
+
 function updateLegend() {
     var content = document.getElementById('legend-content');
     content.innerHTML = '';
@@ -347,7 +355,7 @@ function updateLegend() {
     });
 
     if (visibles.length === 0) {
-        content.innerHTML = '<div class="legend-empty">Enable a layer to see its legend.</div>';
+        content.innerHTML = '<div class="legend-empty">Switch on a layer to see its legend.</div>';
         return;
     }
 
@@ -362,10 +370,11 @@ function updateLegend() {
         var item = document.createElement('div');
         item.className = 'legend-item';
         item.innerHTML = '<div class="legend-item-title">' + lyr.get('title') + '</div>' +
-                         '<img src="' + url + '" alt="Legend of ' + lyr.get('title') + '">';
+                         '<img src="' + url + '" alt="Legend for ' + lyr.get('title') + '">';
         content.appendChild(item);
     });
 }
+
 
 collectWmsLayers(overlayLayers, []).forEach(function (lyr) {
     lyr.on('change:visible', updateLegend);
