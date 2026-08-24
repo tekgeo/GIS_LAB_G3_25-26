@@ -96,7 +96,7 @@ function multiBarChart(canvasId, labels, meanData, minData, maxData) {
     });
   }
 
-const transitionClasses = ["Stable Crops", "Crop Gain", "Crop Loss"];
+const transitionClasses = ["Stable", "Gain", "Loss"];
 
   // Step 6 — Multi-dataset execution using real group stats (France Crop Dynamics)
   multiBarChart("chart-no2-bar", transitionClasses, [-0.9458, -0.9458, -0.7137], [-4.6751, -4.6751, -4.6751], [3.1563, 3.1563, 3.1563]);
