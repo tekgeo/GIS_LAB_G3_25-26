@@ -298,21 +298,40 @@ ctrlStyle.textContent = `
     color: #0b2d48;
   }
 
- 
-  .ol-attribution {
+.ol-attribution {
+    position: absolute !important;
+    right: 8px !important;
+    bottom: 8px !important;
+    left: auto !important;
+    top: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+    max-width: 320px !important;
+
+    background: rgba(255,255,255,0.88) !important;
+    padding: 2px 5px !important;
+    margin: 0 !important;
+    border-radius: 4px !important;
+
     font-size: 9px !important;
-    right: 5px !important;
-    bottom: 5px !important;
+    line-height: 1.2 !important;
+
+    z-index: 1000 !important;
   }
 
   .ol-attribution ul {
+    display: inline !important;
     margin: 0 !important;
-    padding: 2px 4px !important;
+    padding: 0 !important;
   }
 
+  .ol-attribution li,
   .ol-attribution a {
     font-size: 9px !important;
+    line-height: 1.2 !important;
   }
+
 `;
 document.head.appendChild(ctrlStyle);
 
