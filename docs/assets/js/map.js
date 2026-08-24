@@ -280,7 +280,7 @@ ctrlStyle.textContent = `
   .ol-overviewmap {
     left: 8px !important;
     right: auto !important;
-    bottom: 40px !important;
+    bottom: 50px !important;
     top: auto !important;
   }
   /* Cursor coordinates: bottom-left, below the overview map */
