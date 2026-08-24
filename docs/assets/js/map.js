@@ -272,7 +272,7 @@ ctrlStyle.textContent = `
   .ol-scale-line {
     left: 50% !important;
     right: auto !important;
-    bottom: 8px !important;
+    bottom: 30px !important;
     transform: translateX(-50%);
     background: rgba(255,255,255,0.75);
   }
@@ -280,13 +280,13 @@ ctrlStyle.textContent = `
   .ol-overviewmap {
     left: 8px !important;
     right: auto !important;
-    bottom: 34px !important;
+    bottom: 40px !important;
     top: auto !important;
   }
   /* Cursor coordinates: bottom-left, below the overview map */
   .custom-mouse-position {
     position: absolute;
-    bottom: 8px;
+    bottom: 30px;
     left: 8px;
     right: auto;
     top: auto;
