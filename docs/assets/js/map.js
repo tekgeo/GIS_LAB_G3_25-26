@@ -1,18 +1,11 @@
-// map.js - version para GitHub Pages (sin Vite / node_modules)
-// Requiere que webgis.html cargue antes ol.js y ol-layerswitcher.js desde CDN
-// (ver instrucciones: los <script> van justo antes de este archivo)
 
 // 1. Setup Map Base Configurations
 const initialZoom = 6;
 const initialCoordinates = [2.2137, 46.2276];
 
-// OJO: localhost = el GeoServer de VUESTRO ordenador.
-// Las capas solo se veran en un PC donde GeoServer este arrancado.
-// Si algun dia publicais GeoServer en un servidor, cambiad solo esta linea.
 const geoserverWmsUrl = 'http://localhost:8080/geoserver/Lab_group_03/wms';
 
-// --- MAPAS BASE ---
-// Solo uno puede estar visible a la vez (type: 'base').
+
 let osm = new ol.layer.Tile({
     title: 'OpenStreetMap',
     type: 'base',
@@ -20,7 +13,7 @@ let osm = new ol.layer.Tile({
     source: new ol.source.OSM()
 });
 
-// Mapa base 2: Esri World Imagery (satelite)
+//Esri World Imagery (satelite)
 let esriSatellite = new ol.layer.Tile({
     title: 'Esri Satelite',
     type: 'base',
@@ -114,8 +107,6 @@ var no2_amac = new ol.layer.Image({
     visible: false,
     source: new ol.source.ImageWMS({
         url: geoserverWmsUrl,
-        // REVISAR: hay un espacio raro en el nombre de la capa ("no2 _2021").
-        // Comprobad en GeoServer si la capa se llama exactamente asi.
         params: { 'LAYERS': 'Lab_group_03:France_no2 _2021_2023_AMAC_map' }
     })
 });
@@ -243,20 +234,12 @@ var layerSwitcher = new LayerSwitcher({});
 map.addControl(layerSwitcher);
 
 
-// ============================================================
-// 6. LEYENDA DINAMICA
-// Muestra la leyenda de cada capa WMS que este encendida.
-// Las imagenes las genera GeoServer solo (GetLegendGraphic),
-// segun el estilo (SLD) que tenga asignada cada capa.
-// ============================================================
-
-// Crea el contenedor de la leyenda dentro del mapa
+//6. Legend
 var legendPanel = document.createElement('div');
 legendPanel.id = 'legend-panel';
 legendPanel.innerHTML = '<div class="legend-title">LEYENDA</div><div id="legend-content"></div>';
 document.getElementById('map').appendChild(legendPanel);
 
-// Estilos del panel (asi no hace falta tocar el CSS del sitio)
 var legendStyle = document.createElement('style');
 legendStyle.textContent = `
   #legend-panel {
@@ -293,7 +276,6 @@ legendStyle.textContent = `
 `;
 document.head.appendChild(legendStyle);
 
-// Recorre grupos y subgrupos para encontrar todas las capas WMS
 function collectWmsLayers(layerGroup, found) {
     layerGroup.getLayers().forEach(function (lyr) {
         if (lyr instanceof ol.layer.Group) {
@@ -305,7 +287,6 @@ function collectWmsLayers(layerGroup, found) {
     return found;
 }
 
-// Redibuja la leyenda con las capas visibles
 function updateLegend() {
     var content = document.getElementById('legend-content');
     content.innerHTML = '';
@@ -334,7 +315,6 @@ function updateLegend() {
     });
 }
 
-// Escucha los cambios de visibilidad de cada capa
 collectWmsLayers(overlayLayers, []).forEach(function (lyr) {
     lyr.on('change:visible', updateLegend);
 });
