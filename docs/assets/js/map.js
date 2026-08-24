@@ -301,7 +301,7 @@ ctrlStyle.textContent = `
 .ol-attribution {
     position: absolute !important;
     right: 8px !important;
-    bottom: 8px !important;
+    bottom: 45px !important;
     left: auto !important;
     top: auto !important;
 
@@ -314,7 +314,7 @@ ctrlStyle.textContent = `
     margin: 0 !important;
     border-radius: 4px !important;
 
-    font-size: 9px !important;
+    font-size: 12px !important;
     line-height: 1.2 !important;
 
     z-index: 1000 !important;
