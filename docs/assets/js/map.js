@@ -297,6 +297,22 @@ ctrlStyle.textContent = `
     font-size: 12px;
     color: #0b2d48;
   }
+
+ 
+  .ol-attribution {
+    font-size: 9px !important;
+    right: 5px !important;
+    bottom: 5px !important;
+  }
+
+  .ol-attribution ul {
+    margin: 0 !important;
+    padding: 2px 4px !important;
+  }
+
+  .ol-attribution a {
+    font-size: 9px !important;
+  }
 `;
 document.head.appendChild(ctrlStyle);
 
