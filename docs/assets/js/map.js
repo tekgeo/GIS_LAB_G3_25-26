@@ -276,14 +276,14 @@ ctrlStyle.textContent = `
     transform: translateX(-50%);
     background: rgba(255,255,255,0.75);
   }
-  /* Overview map: bottom-left, above the coordinates readout */
+
   .ol-overviewmap {
     left: 8px !important;
     right: auto !important;
-    bottom: 50px !important;
+    bottom: 60px !important;
     top: auto !important;
   }
-  /* Cursor coordinates: bottom-left, below the overview map */
+ 
   .custom-mouse-position {
     position: absolute;
     bottom: 30px;
@@ -312,7 +312,7 @@ var legendStyle = document.createElement('style');
 legendStyle.textContent = `
   #legend-panel {
     position: absolute;
-    top: 118px;            /* sits under the zoom / home buttons */
+    top: 118px;            
     left: 8px;
     bottom: auto;
     z-index: 1000;
