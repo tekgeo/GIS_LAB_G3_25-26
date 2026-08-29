@@ -80,60 +80,33 @@
       
       <!-- ==================== NO2 ==================== -->
       <div class="tab-pane fade show active" id="lcc-no2">
-        <div class="row align-items-stretch gy-4">
-          <!-- LEFT SIDE: Raw Table Elements Matrix Tracking -->
-          <div class="col-lg-7">
-            <div class="data-table-wrap shadow-sm rounded border bg-white p-3" style="max-height: 480px; overflow-y: auto;">
-              <h4 class="h6 text-primary mb-3"><i class="bi bi-file-earmark-code"></i>Built Area (Code 7)</h4>
-              <table class="aq-table mb-0" style="width: 100%; font-size: 0.76rem; white-space: nowrap;">
+        <div class="row justify-content-center gy-4">
+          <div class="col-lg-8">
+            <div class="data-table-wrap shadow-sm rounded border bg-white p-3">
+              <h4 class="h6 text-primary mb-3"><i class="bi bi-table"></i> Built Area (Code 7) — Land-cover change statistics</h4>
+              <table class="aq-table mb-0" style="width: 100%;">
                 <thead>
-                  <tr style="position: sticky; top: 0; background: #fff; z-index: 2;">
-                    <th>Value</th><th>Pixel Count</th><th>Area</th><th>Used To</th>
-                    <th>Pixel Count - Stability</th><th>Pixel Count - Gain</th><th>Pixel Count - Loss</th>
-                    <th>Area - Stability</th><th>Area - Gain</th><th>Area - Loss</th>
-                    <th>Pixel Count - SourceGain%</th><th>Area - SourceGain%</th><th>Pixel Count - DestLoss%</th><th>Area - DestLoss%</th>
-                  </tr>
+                  <tr><th>Indicator</th><th>Value (%)</th><th>Class</th></tr>
                 </thead>
                 <tbody>
-                  <tr class="text-muted"><td>107</td><td>610,371</td><td>0.006335</td><td>Ignore (cloud)</td><td>0</td><td>0</td><td>0</td><td>0.000000</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>207</td><td>8,387,313</td><td>0.087049</td><td>Source of Gain</td><td>0</td><td>8387313</td><td>0</td><td>0.000000</td><td>0.087049</td><td>0.000000</td><td>21.31%</td><td>21.31%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>407</td><td>68,212</td><td>0.000708</td><td>Source of Gain</td><td>0</td><td>68212</td><td>0</td><td>0.000000</td><td>0.000708</td><td>0.000000</td><td>0.17%</td><td>0.000708</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>507</td><td>23,598,387</td><td>0.244921</td><td>Source of Gain</td><td>0</td><td>23598387</td><td>0</td><td>0.000000</td><td>0.244921</td><td>0.000000</td><td>59.95%</td><td>59.95%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>701</td><td>323,928</td><td>0.003362</td><td>Destination Loss</td><td>0</td><td>0</td><td>323928</td><td>0.000000</td><td>0.000000</td><td>0.003362</td><td>0.00%</td><td>0.00%</td><td>1.33%</td><td>1.33%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>702</td><td>4,759,521</td><td>0.049398</td><td>Destination Loss</td><td>0</td><td>0</td><td>4759521</td><td>0.000000</td><td>0.000000</td><td>0.049398</td><td>0.00%</td><td>0.00%</td><td>19.51%</td><td>19.51%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>704</td><td>25,324</td><td>0.000263</td><td>Destination Loss</td><td>0</td><td>0</td><td>25324</td><td>0.000000</td><td>0.000000</td><td>0.000263</td><td>0.00%</td><td>0.00%</td><td>0.10%</td><td>0.10%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>705</td><td>15,307,909</td><td>0.158876</td><td>Destination Loss</td><td>0</td><td>0</td><td>15307909</td><td>0.000000</td><td>0.000000</td><td>0.158876</td><td>0.00%</td><td>0.00%</td><td>62.75%</td><td>62.75%</td></tr>
-                  <tr style="background-color: rgba(52, 152, 219, 0.08); font-weight: bold;"><td>707</td><td>482,445,433</td><td>5.007158</td><td>Stability Rate</td><td>482445433</td><td>0</td><td>0</td><td>5.007158</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>708</td><td>443,442</td><td>0.004602</td><td>Destination Loss</td><td>0</td><td>0</td><td>443442</td><td>0.000000</td><td>0.000000</td><td>0.004602</td><td>0.00%</td><td>0.00%</td><td>1.82%</td><td>1.82%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>709</td><td>6,365</td><td>0.000066</td><td>Destination Loss</td><td>0</td><td>0</td><td>6365</td><td>0.000000</td><td>0.000000</td><td>0.000066</td><td>0.00%</td><td>0.00%</td><td>0.03%</td><td>0.03%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>711</td><td>3,528,414</td><td>0.036620</td><td>Destination Loss</td><td>0</td><td>0</td><td>3528414</td><td>0.000000</td><td>0.000000</td><td>0.036620</td><td>0.00%</td><td>0.00%</td><td>14.46%</td><td>14.46%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>807</td><td>1,908,708</td><td>0.019810</td><td>Source of Gain</td><td>0</td><td>1908708</td><td>0</td><td>0.000000</td><td>0.019810</td><td>0.000000</td><td>4.85%</td><td>4.85%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>907</td><td>38,537</td><td>0.000400</td><td>Source of Gain</td><td>0</td><td>38537</td><td>0</td><td>0.000000</td><td>0.000400</td><td>0.000000</td><td>0.10%</td><td>0.10%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>1107</td><td>5,361,593</td><td>0.055646</td><td>Source of Gain</td><td>0</td><td>5361593</td><td>0</td><td>0.000000</td><td>0.055646</td><td>0.000000</td><td>13.62%</td><td>13.62%</td><td>0.00%</td><td>0.00%</td></tr>
+                  <tr style="background-color: rgba(27, 108, 168, 0.08); font-weight: 600;"><td>Stability (Persistence)</td><td>94.08%</td><td>N/A (Baseline)</td></tr>
+                  <tr class="table-light"><td colspan="3"><strong>Top 3 Sources of Gain</strong></td></tr>
+                  <tr><td>Primary</td><td>59.84%</td><td>Crops</td></tr>
+                  <tr><td>Secondary</td><td>20.61%</td><td>Trees</td></tr>
+                  <tr><td>Tertiary</td><td>13.21%</td><td>Rangeland</td></tr>
+                  <tr class="table-light"><td colspan="3"><strong>Top 3 Destinations of Loss</strong></td></tr>
+                  <tr><td>Primary</td><td>63.18%</td><td>Crops</td></tr>
+                  <tr><td>Secondary</td><td>19.17%</td><td>Trees</td></tr>
+                  <tr><td>Tertiary</td><td>14.05%</td><td>Rangeland</td></tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-          <!-- RIGHT SIDE: Processed Summary Statistics -->
-          <div class="col-lg-5">
-            <div class="data-table-wrap shadow-sm rounded border bg-white p-3 h-100">
-              <h4 class="h6 text-primary mb-3"><i class="bi bi-table"></i> NO2 Parameters</h4>
-              <table class="aq-table mb-0" style="width: 100%; font-size: 0.82rem;">
-                <thead>
-                  <tr><th>Indicator</th><th>Value (%)</th><th>Category Mapping</th></tr>
-                </thead>
-                <tbody>
-                  <tr style="background-color: rgba(27, 108, 168, 0.08); font-weight: 600;">
-                    <td>Stability (Persistence)</td><td>95.19%</td><td>N/A (Baseline)</td>
-                  </tr>
-                  <tr><td>Primary Source of Gain</td><td>59.95%</td><td>Crops (Code 5)</td></tr>
-                  <tr><td>Secondary Source of Gain</td><td>21.31%</td><td>Trees (Code 2)</td></tr>
-                  <tr><td>Tertiary Source of Gain</td><td>13.62%</td><td>Rangeland (Code 11)</td></tr>
-                  <tr><td>Primary Destination of Loss</td><td>62.75%</td><td>Crops (Code 5)</td></tr>
-                  <tr><td>Secondary Destination of Loss</td><td>19.51%</td><td>Trees (Code 2)</td></tr>
-                  <tr><td>Tertiary Destination of Loss</td><td>14.46%</td><td>Rangeland (Code 11)</td></tr>
-                </tbody>
-              </table>
+              <p class="text-muted mt-3 mb-0" style="font-size: 0.8rem;">
+                Statistics for the <strong>Built Area</strong> class, computed from the shared 2021&rarr;2023 land-cover change raster.
+                Stability = S<sub>valid</sub> / (S<sub>valid</sub> + L<sub>valid</sub>); Gain and Loss shares are each class&rsquo;s
+                area over total valid Gain / Loss. Cloud transitions (code 10xx / xx10) are excluded as No&nbsp;Data.
+                Percentages are <strong>area-based</strong>: the raster was reprojected to <strong>EPSG:3035 (ETRS89-LAEA, equal-area)</strong>
+                with nearest-neighbour resampling before computing areas, so shares reflect real surface rather than pixel counts.
+              </p>
             </div>
           </div>
         </div>
@@ -141,61 +114,33 @@
 
       <!-- ==================== PM2.5 ==================== -->
       <div class="tab-pane fade" id="lcc-pm25">
-        <div class="row align-items-stretch gy-4">
-          <!-- LEFT SIDE: Raw Table Elements Matrix Tracking -->
-          <div class="col-lg-7">
-            <div class="data-table-wrap shadow-sm rounded border bg-white p-3" style="max-height: 480px; overflow-y: auto;">
-              <h4 class="h6 text-success mb-3"><i class="bi bi-file-earmark-code"></i>Crops (Class 5)</h4>
-              <table class="aq-table mb-0" style="width: 100%; font-size: 0.76rem; white-space: nowrap;">
+        <div class="row justify-content-center gy-4">
+          <div class="col-lg-8">
+            <div class="data-table-wrap shadow-sm rounded border bg-white p-3">
+              <h4 class="h6 text-success mb-3"><i class="bi bi-table"></i> Crops (Code 5) — Land-cover change statistics</h4>
+              <table class="aq-table mb-0" style="width: 100%;">
                 <thead>
-                  <tr style="position: sticky; top: 0; background: #fff; z-index: 2;">
-                    <th>Value</th><th>Pixel Count</th><th>Area</th><th>Used To</th>
-                    <th>Pixel Count - Stability</th><th>Pixel Count - Gain</th><th>Pixel Count - Loss</th>
-                    <th>Area - Stability</th><th>Area - Gain</th><th>Area - Loss</th>
-                    <th>Pixel Count - SourceGain%</th><th>Area - SourceGain%</th><th>Pixel Count - DestLoss%</th><th>Area - DestLoss%</th>
-                  </tr>
+                  <tr><th>Indicator</th><th>Value (%)</th><th>Class</th></tr>
                 </thead>
                 <tbody>
-                  <tr class="text-muted"><td>105</td><td>12,482</td><td>0.012482</td><td>Ignored (Cloud)</td><td>0</td><td>0</td><td>0</td><td>0.000000</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>205</td><td>127,527</td><td>0.127527</td><td>Source of Gain</td><td>0</td><td>127527</td><td>0</td><td>0.000000</td><td>0.127527</td><td>0.000000</td><td>21.05%</td><td>21.05%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>405</td><td>3,402</td><td>0.003402</td><td>Source of Gain</td><td>0</td><td>3402</td><td>0</td><td>0.000000</td><td>0.003402</td><td>0.000000</td><td>0.56%</td><td>0.56%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>501</td><td>5,724</td><td>0.005724</td><td>Destination Loss</td><td>0</td><td>0</td><td>5724</td><td>0.000000</td><td>0.000000</td><td>0.005724</td><td>0.00%</td><td>0.00%</td><td>0.50%</td><td>0.50%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>502</td><td>281,515</td><td>0.281515</td><td>Destination Loss</td><td>0</td><td>0</td><td>281515</td><td>0.000000</td><td>0.000000</td><td>0.281515</td><td>0.00%</td><td>0.00%</td><td>24.70%</td><td>24.70%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>504</td><td>2,904</td><td>0.002904</td><td>Destination Loss</td><td>0</td><td>0</td><td>2904</td><td>0.000000</td><td>0.000000</td><td>0.002904</td><td>0.00%</td><td>0.00%</td><td>0.25%</td><td>0.25%</td></tr>
-                  <tr style="background-color: rgba(52, 152, 219, 0.08); font-weight: bold;"><td>505</td><td>30,375,639</td><td>30.375639</td><td>Stability Rate</td><td>30375639</td><td>0</td><td>0</td><td>30.375639</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>507</td><td>63,563</td><td>0.063563</td><td>Destination Loss</td><td>0</td><td>0</td><td>63563</td><td>0.000000</td><td>0.000000</td><td>0.063563</td><td>0.00%</td><td>0.00%</td><td>5.58%</td><td>5.58%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>508</td><td>61</td><td>0.000061</td><td>Destination Loss</td><td>0</td><td>0</td><td>61</td><td>0.000000</td><td>0.000000</td><td>0.000061</td><td>0.00%</td><td>0.00%</td><td>0.01%</td><td>0.01%</td></tr>
-                  <tr class="text-muted"><td>510</td><td>26</td><td>0.000026</td><td>Ignored (Cloud)</td><td>0</td><td>0</td><td>0</td><td>0.000000</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>511</td><td>786,060</td><td>0.786060</td><td>Destination Loss</td><td>0</td><td>0</td><td>786060</td><td>0.000000</td><td>0.000000</td><td>0.786060</td><td>0.00%</td><td>0.00%</td><td>68.96%</td><td>68.96%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>705</td><td>23,238</td><td>0.023238</td><td>Source of Gain</td><td>0</td><td>23238</td><td>0</td><td>0.000000</td><td>0.023238</td><td>0.000000</td><td>3.84%</td><td>3.84%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>805</td><td>463</td><td>0.000463</td><td>Source of Gain</td><td>0</td><td>463</td><td>0</td><td>0.000000</td><td>0.000463</td><td>0.000000</td><td>0.08%</td><td>0.08%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>905</td><td>10</td><td>0.000010</td><td>Source of Gain</td><td>0</td><td>10</td><td>0</td><td>0.000000</td><td>0.000010</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr class="text-muted"><td>1005</td><td>9</td><td>0.000009</td><td>Ignored (Cloud)</td><td>0</td><td>0</td><td>0</td><td>0.000000</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>1105</td><td>451,196</td><td>0.451196</td><td>Source of Gain</td><td>0</td><td>451196</td><td>0</td><td>0.000000</td><td>0.451196</td><td>0.000000</td><td>74.47%</td><td>74.47%</td><td>0.00%</td><td>0.00%</td></tr>
+                  <tr style="background-color: rgba(46, 204, 113, 0.10); font-weight: 600;"><td>Stability (Persistence)</td><td>94.14%</td><td>N/A (Baseline)</td></tr>
+                  <tr class="table-light"><td colspan="3"><strong>Top 3 Sources of Gain</strong></td></tr>
+                  <tr><td>Primary</td><td>47.34%</td><td>Rangeland</td></tr>
+                  <tr><td>Secondary</td><td>31.77%</td><td>Trees</td></tr>
+                  <tr><td>Tertiary</td><td>17.89%</td><td>Built Area</td></tr>
+                  <tr class="table-light"><td colspan="3"><strong>Top 3 Destinations of Loss</strong></td></tr>
+                  <tr><td>Primary</td><td>47.45%</td><td>Rangeland</td></tr>
+                  <tr><td>Secondary</td><td>35.73%</td><td>Trees</td></tr>
+                  <tr><td>Tertiary</td><td>15.62%</td><td>Built Area</td></tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-          <!-- RIGHT SIDE: Processed Summary Statistics -->
-          <div class="col-lg-5">
-            <div class="data-table-wrap shadow-sm rounded border bg-white p-3 h-100">
-              <h4 class="h6 text-success mb-3"><i class="bi bi-table"></i> PM2.5 Parameters</h4>
-              <table class="aq-table mb-0" style="width: 100%; font-size: 0.82rem;">
-                <thead>
-                  <tr><th>Indicator</th><th>Value (%)</th><th>Category Mapping</th></tr>
-                </thead>
-                <tbody>
-                  <tr style="background-color: rgba(46, 204, 113, 0.08); font-weight: 600;">
-                    <td>Stability (Persistence)</td><td>96.38%</td><td>N/A (Baseline)</td>
-                  </tr>
-                  <tr><td>Primary Source of Gain</td><td>74.47%</td><td>Rangeland (Code 11)</td></tr>
-                  <tr><td>Secondary Source of Gain</td><td>21.05%</td><td>Trees (Code 2)</td></tr>
-                  <tr><td>Tertiary Source of Gain</td><td>3.84%</td><td>Built Area (Code 7)</td></tr>
-                  <tr><td>Primary Destination of Loss</td><td>68.96%</td><td>Rangeland (Code 11)</td></tr>
-                  <tr><td>Secondary Destination of Loss</td><td>24.70%</td><td>Trees (Code 2)</td></tr>
-                  <tr><td>Tertiary Destination of Loss</td><td>5.58%</td><td>Built Area (Code 7)</td></tr>
-                </tbody>
-              </table>
+              <p class="text-muted mt-3 mb-0" style="font-size: 0.8rem;">
+                Statistics for the <strong>Crops</strong> class, computed from the shared 2021&rarr;2023 land-cover change raster.
+                Stability = S<sub>valid</sub> / (S<sub>valid</sub> + L<sub>valid</sub>); Gain and Loss shares are each class&rsquo;s
+                area over total valid Gain / Loss. Cloud transitions (code 10xx / xx10) are excluded as No&nbsp;Data.
+                Percentages are <strong>area-based</strong>: the raster was reprojected to <strong>EPSG:3035 (ETRS89-LAEA, equal-area)</strong>
+                with nearest-neighbour resampling before computing areas, so shares reflect real surface rather than pixel counts.
+              </p>
             </div>
           </div>
         </div>
@@ -203,62 +148,33 @@
 
       <!-- ==================== PM10 ==================== -->
       <div class="tab-pane fade" id="lcc-pm10">
-        <div class="row align-items-stretch gy-4">
-          <!-- LEFT SIDE: Raw Table Elements Matrix Tracking -->
-          <div class="col-lg-7">
-            <div class="data-table-wrap shadow-sm rounded border bg-white p-3" style="max-height: 480px; overflow-y: auto;">
-              <h4 class="h6 text-warning mb-3"><i class="bi bi-file-earmark-code"></i>Trees (Class 2)</h4>
-              <table class="aq-table mb-0" style="width: 100%; font-size: 0.76rem; white-space: nowrap;">
+        <div class="row justify-content-center gy-4">
+          <div class="col-lg-8">
+            <div class="data-table-wrap shadow-sm rounded border bg-white p-3">
+              <h4 class="h6 text-warning mb-3"><i class="bi bi-table"></i> Trees (Code 2) — Land-cover change statistics</h4>
+              <table class="aq-table mb-0" style="width: 100%;">
                 <thead>
-                  <tr style="position: sticky; top: 0; background: #fff; z-index: 2;">
-                    <th>Value</th><th>Pixel Count</th><th>Area</th><th>Used To</th>
-                    <th>Pixel Count - Stability</th><th>Pixel Count - Gain</th><th>Pixel Count - Loss</th>
-                    <th>Area - Stability</th><th>Area - Gain</th><th>Area - Loss</th>
-                    <th>Pixel Count - SourceGain%</th><th>Area - SourceGain%</th><th>Pixel Count - DestLoss%</th><th>Area - DestLoss%</th>
-                  </tr>
+                  <tr><th>Indicator</th><th>Value (%)</th><th>Class</th></tr>
                 </thead>
                 <tbody>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>102</td><td>2,428,869</td><td>0.025208</td><td>Source of Gain</td><td>0</td><td>2428869</td><td>0</td><td>0.000000</td><td>0.025208</td><td>0.000000</td><td>1.98%</td><td>1.98%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>201</td><td>1,274,361</td><td>0.013226</td><td>Destination Loss</td><td>0</td><td>0</td><td>1274361</td><td>0.000000</td><td>0.000000</td><td>0.013226</td><td>0.00%</td><td>0.00%</td><td>1.28%</td><td>1.28%</td></tr>
-                  <tr style="background-color: rgba(52, 152, 219, 0.08); font-weight: bold;"><td>202</td><td>1,801,921,054</td><td>18.701593</td><td>Stability Rate</td><td>1801921054</td><td>0</td><td>0</td><td>18.701593</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>204</td><td>252,068</td><td>0.002616</td><td>Destination Loss</td><td>0</td><td>0</td><td>252068</td><td>0.000000</td><td>0.000000</td><td>0.002616</td><td>0.00%</td><td>0.00%</td><td>0.25%</td><td>0.25%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>205</td><td>33,636,233</td><td>0.349100</td><td>Destination Loss</td><td>0</td><td>0</td><td>33636233</td><td>0.000000</td><td>0.000000</td><td>0.349100</td><td>0.00%</td><td>0.00%</td><td>33.70%</td><td>33.70%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>207</td><td>9,364,258</td><td>0.097189</td><td>Destination Loss</td><td>0</td><td>0</td><td>9364258</td><td>0.000000</td><td>0.000000</td><td>0.097189</td><td>0.00%</td><td>0.00%</td><td>9.38%</td><td>9.38%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>208</td><td>77,807</td><td>0.000808</td><td>Destination Loss</td><td>0</td><td>0</td><td>77807</td><td>0.000000</td><td>0.000000</td><td>0.000808</td><td>0.00%</td><td>0.00%</td><td>0.08%</td><td>0.08%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>209</td><td>37,081</td><td>0.000385</td><td>Destination Loss</td><td>0</td><td>0</td><td>37081</td><td>0.000000</td><td>0.000000</td><td>0.000385</td><td>0.00%</td><td>0.00%</td><td>0.04%</td><td>0.04%</td></tr>
-                  <tr class="text-muted"><td>210</td><td>3,472</td><td>0.000036</td><td>Ignored (Cloud)</td><td>0</td><td>0</td><td>0</td><td>0.000000</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(231, 76, 60, 0.04);"><td>211</td><td>55,176,604</td><td>0.572661</td><td>Destination Loss</td><td>0</td><td>0</td><td>55176604</td><td>0.000000</td><td>0.000000</td><td>0.572661</td><td>0.00%</td><td>0.00%</td><td>55.28%</td><td>55.28%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>402</td><td>251,363</td><td>0.002609</td><td>Source of Gain</td><td>0</td><td>251363</td><td>0</td><td>0.000000</td><td>0.002609</td><td>0.000000</td><td>0.21%</td><td>0.21%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>502</td><td>62,586,061</td><td>0.649562</td><td>Source of Gain</td><td>0</td><td>62586061</td><td>0</td><td>0.000000</td><td>0.649562</td><td>0.000000</td><td>51.08%</td><td>51.08%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>702</td><td>5,736,312</td><td>0.059535</td><td>Source of Gain</td><td>0</td><td>5736312</td><td>0</td><td>0.000000</td><td>0.059535</td><td>0.000000</td><td>4.68%</td><td>4.68%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>802</td><td>218,459</td><td>0.002267</td><td>Source of Gain</td><td>0</td><td>218459</td><td>0</td><td>0.000000</td><td>0.002267</td><td>0.000000</td><td>0.18%</td><td>0.18%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>902</td><td>79,699</td><td>0.000827</td><td>Source of Gain</td><td>0</td><td>79699</td><td>0</td><td>0.000000</td><td>0.000827</td><td>0.000000</td><td>0.07%</td><td>0.07%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr class="text-muted"><td>1002</td><td>2,934</td><td>0.000030</td><td>Ignored (Cloud)</td><td>0</td><td>0</td><td>0</td><td>0.000000</td><td>0.000000</td><td>0.000000</td><td>0.00%</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-                  <tr style="background-color: rgba(46, 204, 113, 0.04);"><td>1102</td><td>51,220,436</td><td>0.531601</td><td>Source of Gain</td><td>0</td><td>51220436</td><td>0</td><td>0.000000</td><td>0.531601</td><td>0.000000</td><td>41.81%</td><td>41.81%</td><td>0.00%</td><td>0.00%</td></tr>
+                  <tr style="background-color: rgba(241, 196, 15, 0.12); font-weight: 600;"><td>Stability (Persistence)</td><td>94.71%</td><td>N/A (Baseline)</td></tr>
+                  <tr class="table-light"><td colspan="3"><strong>Top 3 Sources of Gain</strong></td></tr>
+                  <tr><td>Primary</td><td>50.74%</td><td>Crops</td></tr>
+                  <tr><td>Secondary</td><td>42.22%</td><td>Rangeland</td></tr>
+                  <tr><td>Tertiary</td><td>4.63%</td><td>Built Area</td></tr>
+                  <tr class="table-light"><td colspan="3"><strong>Top 3 Destinations of Loss</strong></td></tr>
+                  <tr><td>Primary</td><td>56.11%</td><td>Rangeland</td></tr>
+                  <tr><td>Secondary</td><td>32.98%</td><td>Crops</td></tr>
+                  <tr><td>Tertiary</td><td>9.30%</td><td>Built Area</td></tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-          <!-- RIGHT SIDE: Processed Summary Statistics -->
-          <div class="col-lg-5">
-            <div class="data-table-wrap shadow-sm rounded border bg-white p-3 h-100">
-              <h4 class="h6 text-warning mb-3"><i class="bi bi-table"></i> PM10 Parameters</h4>
-              <table class="aq-table mb-0" style="width: 100%; font-size: 0.82rem;">
-                <thead>
-                  <tr><th>Indicator</th><th>Value (%)</th><th>Category Mapping</th></tr>
-                </thead>
-                <tbody>
-                  <tr style="background-color: rgba(241, 196, 15, 0.08); font-weight: 600;">
-                    <td>Stability (Persistence)</td><td>94.75%</td><td>N/A (Baseline)</td>
-                  </tr>
-                  <tr><td>Primary Source of Gain</td><td>51.08%</td><td>Crops (Code 5)</td></tr>
-                  <tr><td>Secondary Source of Gain</td><td>41.81%</td><td>Rangeland (Code 11)</td></tr>
-                  <tr><td>Tertiary Source of Gain</td><td>4.68%</td><td>Built Area (Code 7)</td></tr>
-                  <tr><td>Primary Destination of Loss</td><td>55.28%</td><td>Rangeland (Code 11)</td></tr>
-                  <tr><td>Secondary Destination of Loss</td><td>33.70%</td><td>Crops (Code 5)</td></tr>
-                  <tr><td>Tertiary Destination of Loss</td><td>9.38%</td><td>Built Area (Code 7)</td></tr>
-                </tbody>
-              </table>
+              <p class="text-muted mt-3 mb-0" style="font-size: 0.8rem;">
+                Statistics for the <strong>Trees</strong> class, computed from the shared 2021&rarr;2023 land-cover change raster.
+                Stability = S<sub>valid</sub> / (S<sub>valid</sub> + L<sub>valid</sub>); Gain and Loss shares are each class&rsquo;s
+                area over total valid Gain / Loss. Cloud transitions (code 10xx / xx10) are excluded as No&nbsp;Data.
+                Percentages are <strong>area-based</strong>: the raster was reprojected to <strong>EPSG:3035 (ETRS89-LAEA, equal-area)</strong>
+                with nearest-neighbour resampling before computing areas, so shares reflect real surface rather than pixel counts.
+              </p>
             </div>
           </div>
         </div>
@@ -304,7 +220,7 @@
               </div>
               <div class="col-lg-6">
                 <div class="chart-card">
-                  <h3>Bar Char NO2</h3>
+                  <h3>Bar Chart NO2</h3>
                   <canvas id="chart-no2-bar"></canvas>
                 </div>
               </div>
@@ -349,7 +265,7 @@
 
           <div class="col-lg-6">
             <div class="chart-card">
-              <h3>Bar Char PM2.5</h3>
+              <h3>Bar Chart PM2.5</h3>
               <canvas id="chart-pm25-bar"></canvas>
             </div>
             </div>
@@ -375,7 +291,7 @@
             </div>
             <div class="col-lg-6">
               <div class="chart-card">
-                <h3>Mean PM10 by region</h3>
+                <h3>Bar Chart PM10</h3>
                 <canvas id="chart-pm10-bar"></canvas>
               </div>
             </div>
